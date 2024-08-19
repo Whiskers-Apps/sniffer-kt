@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./sniffer.webp">
+<img src="./banner.webp">
 
 </div>
 
