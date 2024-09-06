@@ -58,7 +58,7 @@ val matches = getJaroWinklerDistance("banana", "banan")
 ## Inner Algorithm
 Returns true if the characters are inside the string.
 ```kotlin
-val matches = getJaroWinklerDistance("banana", "bna")
+val matches = getInnerMatch("Sprigatito", "agt")
 ```
 
 ## Sniffer
@@ -81,7 +81,7 @@ val sniffer = Sniffer(
 The sniffer result returns the values of the algorithms from a match. It's more appropriate for debuging. 
 
 ```kotlin
-val result = getSnifferResult()
+val result = getSnifferResult("Luxray", "lux")
 ```
 
 # Contributors
