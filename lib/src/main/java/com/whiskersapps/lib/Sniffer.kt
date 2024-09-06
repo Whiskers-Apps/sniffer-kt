@@ -1,11 +1,9 @@
 package com.whiskersapps.lib
 
-import SnifferResult
-
 data class Sniffer(
     /** The amount of characters that can be different*/
     private val levenshteinDistance: Int = 2,
-    /** Use a levenshtein match*/
+    /** Use levenshtein match*/
     private val doLevenshteinMatch: Boolean = true,
     /** The amount of positional characters that can be different*/
     private val hammingDistance: Int = 2,
@@ -20,6 +18,7 @@ data class Sniffer(
     /** Do case-sensitive search*/
     private val caseSensitive: Boolean = false,
 ) {
+    /** Returns true if any of the algorithms has a match between the strings */
     fun matches(original: String, search: String): Boolean {
 
         val firstWord = if (caseSensitive) original else original.lowercase()
@@ -50,7 +49,7 @@ data class Sniffer(
 
     /**
      * Get a sniffer result object containing the results of all the matches.
-     * Hamming will return -1 if the strings are a different size*/
+     * Hamming returns -1 if the strings are a different size*/
     fun getSnifferResult(original: String, search: String): SnifferResult {
 
         val firstWord = if (caseSensitive) original else original.lowercase()

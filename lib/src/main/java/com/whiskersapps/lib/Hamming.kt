@@ -2,8 +2,6 @@ package com.whiskersapps.lib
 
 /**
  * Returns the amount of different positional characters.
- *
- * More at https://en.wikipedia.org/wiki/Hamming_distance
  */
 fun getHammingDistance(original: String, search: String): Int{
 

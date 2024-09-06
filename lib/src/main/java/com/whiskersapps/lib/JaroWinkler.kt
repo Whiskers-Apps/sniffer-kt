@@ -1,5 +1,8 @@
 package com.whiskersapps.lib
 
+
+
+/** Returns the similarity of both strings. From 0 to 1 */
 fun getJaroWinklerDistance(original: String, search: String): Double {
     val originalSize = original.length
     val searchSize = search.length

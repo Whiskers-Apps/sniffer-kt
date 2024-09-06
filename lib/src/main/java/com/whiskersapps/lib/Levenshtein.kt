@@ -2,8 +2,6 @@ package com.whiskersapps.lib
 
 /**
  * Returns the amount of characters needed to change for the strings to match.
- *
- * More at https://en.wikipedia.org/wiki/Levenshtein_distance
  */
 fun getLevenshteinDistance(original: String, search: String): Int {
 
