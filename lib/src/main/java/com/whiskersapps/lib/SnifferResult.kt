@@ -5,5 +5,6 @@ data class SnifferResult(
     val levenshtein: Int,
     val hamming: Int,
     val jaroWinkler: Double,
-    val inner: Boolean
+    val inner: Boolean,
+    val contain: Boolean
 )

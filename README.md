@@ -61,8 +61,15 @@ Returns true if the characters are inside the string.
 val matches = getInnerMatch("Sprigatito", "agt")
 ```
 
+## Contain Match
+Returns true if the search string is inside the the original. It matches even if it has spaces.
+```kotlin
+val contains = getContainMatch("youtube", "utu")
+val contains = getContainMatch("macacos me mordam", "smem")
+```
+
 ## Sniffer
-The sniffer match object can be changed in its intialization in case you don't like the default values.
+The sniffer match object can be changed in its initialization in case you don't like the default values.
 
 ```kotlin
 val sniffer = Sniffer(

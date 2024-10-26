@@ -14,7 +14,9 @@ data class Sniffer(
     /** Use jaro winkler match*/
     private val doJaroWinklerMatch: Boolean = true,
     /** Use inner match*/
-    private val doInnerMatch: Boolean = true,
+    private val doInnerMatch: Boolean = false,
+    /** Use contain match*/
+    private val doContainMatch: Boolean = true,
     /** Do case-sensitive search*/
     private val caseSensitive: Boolean = false,
 ) {
@@ -44,7 +46,12 @@ data class Sniffer(
         else
             false
 
-        return levenshteinMatch || hammingMatch || jaroWinklerMatch || innerMatch
+        val containMatch = if(doContainMatch)
+            getContainMatch(firstWord, secondWord)
+        else
+            false
+
+        return levenshteinMatch || hammingMatch || jaroWinklerMatch || innerMatch || containMatch
     }
 
     /**
@@ -62,7 +69,8 @@ data class Sniffer(
             else
                 -1,
             jaroWinkler = getJaroWinklerDistance(firstWord, secondWord),
-            inner = getInnerMatch(firstWord, secondWord)
+            inner = getInnerMatch(firstWord, secondWord),
+            contain = getContainMatch(firstWord, secondWord)
         )
     }
 }

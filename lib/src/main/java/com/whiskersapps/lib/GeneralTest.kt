@@ -3,9 +3,10 @@ package com.whiskersapps.lib
 import junit.framework.Assert.assertEquals
 import org.junit.Test
 
-class Testing {
+class GeneralTest {
+
     @Test
-    fun levenshtein(){
+    fun levenshtein() {
         val expected = 3
         val actual = getLevenshteinDistance("Banana", "banini")
         assertEquals(expected, actual)
@@ -37,7 +38,18 @@ class Testing {
     }
 
     @Test
-    fun sniffer(){
+    fun contain() {
+        val expected = true
+        val actual = getContainMatch("youtube", "utu")
+        assertEquals(expected, actual)
+
+        val otherExpected = true
+        val otherActual = getContainMatch("macacos me mordam", "smem")
+        assertEquals(otherExpected, otherActual)
+    }
+
+    @Test
+    fun sniffer() {
         val sniffer = Sniffer()
         val expected = true
         val actual = sniffer.matches("Banana", "banana")
@@ -46,12 +58,13 @@ class Testing {
     }
 
     @Test
-    fun snifferResult(){
+    fun snifferResult() {
         val sniffer = Sniffer()
         val result = sniffer.getSnifferResult("Luxray", "lux")
 
         assertEquals(result.levenshtein, 3)
         assertEquals(result.jaroWinkler, 0.8833333333333334)
         assertEquals(result.inner, true)
+        assertEquals(result.contain, true)
     }
 }
