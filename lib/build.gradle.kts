@@ -18,7 +18,7 @@ publishing{
         register("release", MavenPublication::class){
             groupId = "com.whiskersapps.sniffer.kt"
             artifactId = "whiskersapps-sniffer-kt"
-            version = "1.1.1"
+            version = "1.1.0"
             from(components["java"])
         }
     }
