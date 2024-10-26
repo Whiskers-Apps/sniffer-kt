@@ -19,7 +19,7 @@ maven {
 Then add the library in your app `build.gradle.kts`
 
 ```
-implementation("com.github.Whiskers-Apps:sniffer-kt:1.0.1")
+implementation("com.github.Whiskers-Apps:sniffer-kt:1.1.0")
 ```
 
 # Usage
